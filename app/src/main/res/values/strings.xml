@@ -1,3 +1,14 @@
 <resources>
-    <string name="app_name">VulnerableAndroidApp</string>
+    <string name="app_name">Aplicativo vulnerável</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="class_code">Segurança em serviços e dispositivos móveis</string>
+    <string name="menu_report">Relatórios</string>
+    <string name="menu_logout">Sair</string>
+
+    <string name="check_in_label">Marcar ponto</string>
+
+    <string name="action_about">Sobre</string>
+    <string name="app_about">Aplicativo criado para ajudar na disciplina de Segurança em serviços e dispositivos móveis do curso de pós graduação Cibersegurança e Perícia Forense Computacional da UNIS MG</string>
 </resources>

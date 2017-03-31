@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:id="@+id/group1" android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_clock_in"
+            android:icon="@drawable/ic_access_time_black_24dp"
+            android:title="Marcar ponto" />
+        <item
+            android:id="@+id/nav_report"
+            android:icon="@drawable/ic_event_note_black_24dp"
+            android:title="@string/menu_report" />
+    </group>
+
+    <group android:id="@+id/group2" android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_exit"
+            android:icon="@drawable/ic_exit_to_app_black_24dp"
+            android:title="@string/menu_logout" />
+    </group>
+
+</menu>
