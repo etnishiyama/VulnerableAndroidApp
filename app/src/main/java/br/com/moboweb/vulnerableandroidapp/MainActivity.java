@@ -16,6 +16,11 @@ import android.view.MenuItem;
 import br.com.moboweb.vulnerableandroidapp.fragment.ClockInFragment;
 import br.com.moboweb.vulnerableandroidapp.fragment.ReportFragment;
 
+/**
+ * @author Everton Takashi Nishiyama <etnishiyama@gmail.com>
+ * @version 1.0
+ * @since 3/31/17
+ */
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 

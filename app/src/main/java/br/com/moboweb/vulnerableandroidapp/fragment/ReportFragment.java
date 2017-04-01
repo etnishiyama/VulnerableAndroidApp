@@ -12,14 +12,12 @@ import android.view.ViewGroup;
 import br.com.moboweb.vulnerableandroidapp.R;
 
 /**
- * @author Everton Takashi Nishiyama <everton.nishiyama@venturus.org.br>
+ * @author Everton Takashi Nishiyama <etnishiyama@gmail.com>
  * @version 1.0
  * @since 3/31/17
  */
-
 public class ReportFragment extends Fragment {
     public static final String TAG = "ReportFragment";
-    private SharedPreferences mDefaultSharedPrefs;
 
     public ReportFragment() {
     }
@@ -27,7 +25,6 @@ public class ReportFragment extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mDefaultSharedPrefs = PreferenceManager.getDefaultSharedPreferences(getActivity());
     }
 
     @Nullable
