@@ -20,9 +20,9 @@ import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
 
 import br.com.moboweb.vulnerableandroidapp.api.VulnerableServerApi;
-import br.com.moboweb.vulnerableandroidapp.data.LoginModel;
-import br.com.moboweb.vulnerableandroidapp.data.MySharedPreferences;
-import br.com.moboweb.vulnerableandroidapp.data.UserModel;
+import br.com.moboweb.vulnerableandroidapp.model.LoginModel;
+import br.com.moboweb.vulnerableandroidapp.model.MySharedPreferences;
+import br.com.moboweb.vulnerableandroidapp.model.UserModel;
 import br.com.moboweb.vulnerableandroidapp.event.LoginMessageEvent;
 import br.com.moboweb.vulnerableandroidapp.utils.ApplicationUtils;
 import retrofit2.Call;

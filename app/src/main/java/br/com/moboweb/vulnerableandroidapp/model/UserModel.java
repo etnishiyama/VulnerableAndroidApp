@@ -1,4 +1,4 @@
-package br.com.moboweb.vulnerableandroidapp.data;
+package br.com.moboweb.vulnerableandroidapp.model;
 
 import com.google.gson.annotations.SerializedName;
 
