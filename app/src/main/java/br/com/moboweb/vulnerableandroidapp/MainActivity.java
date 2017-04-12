@@ -41,9 +41,10 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
         // Show main fragment
-        ClockInFragment statusFragment = new ClockInFragment();
+        ClockInFragment clockInFragment = new ClockInFragment();
+        clockInFragment.setContext(MainActivity.this);
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-        fragmentTransaction.replace(R.id.content_main, statusFragment);
+        fragmentTransaction.replace(R.id.content_main, clockInFragment);
         fragmentTransaction.commit();
     }
 
@@ -91,6 +92,7 @@ public class MainActivity extends AppCompatActivity
 
         if (id == R.id.nav_clock_in) {
             ClockInFragment clockInFragment = new ClockInFragment();
+            clockInFragment.setContext(MainActivity.this);
             if(!getSupportFragmentManager().findFragmentById(R.id.content_main).getClass().equals(clockInFragment.getClass())) {
                 FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
                 fragmentTransaction.replace(R.id.content_main, clockInFragment);
@@ -99,6 +101,7 @@ public class MainActivity extends AppCompatActivity
             }
         } else if (id == R.id.nav_report) {
             ReportFragment reportFragment = new ReportFragment();
+            reportFragment.setContext(MainActivity.this);
             if(!getSupportFragmentManager().findFragmentById(R.id.content_main).getClass().equals(reportFragment.getClass())) {
                 FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
                 fragmentTransaction.replace(R.id.content_main, reportFragment);

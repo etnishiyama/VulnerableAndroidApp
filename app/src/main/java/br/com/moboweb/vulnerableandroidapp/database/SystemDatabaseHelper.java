@@ -17,15 +17,18 @@ public class SystemDatabaseHelper extends SQLiteOpenHelper {
     public SystemDatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
+
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(SystemContract.SQL_CREATE_USER_ENTRIES);
         db.execSQL(SystemContract.SQL_CREATE_CLOCK_ENTRIES);
     }
+
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL(SystemContract.SQL_DELETE_USER_ENTRIES);
         db.execSQL(SystemContract.SQL_DELETE_CLOCK_ENTRIES);
         onCreate(db);
     }
+
     public void onDowngrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         onUpgrade(db, oldVersion, newVersion);
     }

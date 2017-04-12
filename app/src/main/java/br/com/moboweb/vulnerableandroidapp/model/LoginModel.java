@@ -10,6 +10,7 @@ import com.google.gson.annotations.SerializedName;
 public class LoginModel {
     public String success;
     public String token;
+    public UserModel user;
 
     @SerializedName("login_id")
     public String login_id;

@@ -20,6 +20,7 @@ import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
 
 import br.com.moboweb.vulnerableandroidapp.api.VulnerableServerApi;
+import br.com.moboweb.vulnerableandroidapp.database.DatabaseHelperApi;
 import br.com.moboweb.vulnerableandroidapp.model.LoginModel;
 import br.com.moboweb.vulnerableandroidapp.model.MySharedPreferences;
 import br.com.moboweb.vulnerableandroidapp.model.UserModel;
@@ -40,6 +41,7 @@ public class LoginActivity extends AppCompatActivity implements Callback<LoginMo
     private static final String LOG_TAG = "LoginActivity";
     private Retrofit mRetrofit;
     private MySharedPreferences mSharedPreferences;
+    private DatabaseHelperApi mDb;
 
     private AutoCompleteTextView mUsernameView;
     private EditText mPasswordView;
@@ -66,6 +68,7 @@ public class LoginActivity extends AppCompatActivity implements Callback<LoginMo
         mProgressView = findViewById(R.id.login_progress);
 
         mSharedPreferences = new MySharedPreferences(getApplicationContext());
+        mDb = new DatabaseHelperApi(this);
 
         Gson gson = new GsonBuilder()
                 .setLenient()
@@ -142,7 +145,6 @@ public class LoginActivity extends AppCompatActivity implements Callback<LoginMo
 
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void onMessageEvent(LoginMessageEvent event) {
-        Log.d("Teste", "messa event! "+event.getMessage());
         switch(event.getMessage()) {
             case LoginMessageEvent.EVENT_CANCEL:
                 showProgress(false);
@@ -152,7 +154,6 @@ public class LoginActivity extends AppCompatActivity implements Callback<LoginMo
                 mPasswordView.requestFocus();
                 break;
             case LoginMessageEvent.EVENT_ON_SUCCESS:
-                Log.d("Teste", "sucesso!!!");
                 finish();
                 break;
             case LoginMessageEvent.EVENT_POST_EXECUTE:
@@ -166,12 +167,15 @@ public class LoginActivity extends AppCompatActivity implements Callback<LoginMo
     @Override
     public void onResponse(Call<LoginModel> call, Response<LoginModel> response) {
         showProgress(false);
-        if(response.isSuccessful()) {
+        if(response.isSuccessful() && (response.body().success == "true")) {
             LoginModel loginObject = response.body();
+            mDb.saveUser(loginObject.user);
             mSharedPreferences.saveApplicationToken(loginObject.token);
+            mSharedPreferences.saveUser(loginObject.user);
             startActivity(new Intent(this, MainActivity.class));
         } else {
-            Log.e(LOG_TAG, response.message());
+            mPasswordView.setError(getString(R.string.error_incorrect_password));
+            mPasswordView.requestFocus();
         }
     }
 

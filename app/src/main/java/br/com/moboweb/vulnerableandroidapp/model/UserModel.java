@@ -18,11 +18,17 @@ public class UserModel {
         this.password = password;
     }
 
-    @SerializedName("user_id")
-    public String user_id;
+    @SerializedName("_id")
+    public String _id;
 
     @Override
     public String toString() {
-        return(username);
+        return "UserModel{" +
+                "username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", name='" + name + '\'' +
+                ", email='" + email + '\'' +
+                ", user_id='" + _id + '\'' +
+                '}';
     }
 }

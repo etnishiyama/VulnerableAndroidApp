@@ -12,7 +12,8 @@ import android.preference.PreferenceManager;
 public class MySharedPreferences {
     private SharedPreferences mSharedPreferences;
 
-    private static final String KEY_TOKEN = "shared_key_token";
+    private static final String KEY_TOKEN = "key_token";
+    private static final String KEY_USER = "key_user";
 
     public MySharedPreferences(Context context) {
         mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
@@ -22,6 +23,16 @@ public class MySharedPreferences {
         SharedPreferences.Editor editor =  mSharedPreferences.edit();
         editor.putString(KEY_TOKEN, token);
         editor.commit();
+    }
+
+    public void saveUser(UserModel user) {
+        SharedPreferences.Editor editor =  mSharedPreferences.edit();
+        editor.putString(KEY_USER, user._id);
+        editor.commit();
+    }
+
+    public String getUserId() {
+        return mSharedPreferences.getString(KEY_USER, null);
     }
 
 }

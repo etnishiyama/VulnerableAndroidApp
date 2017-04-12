@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Aplicativo vulnerável</string>
+    <string name="app_name">Aplicativo Vulnerável</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -14,14 +14,14 @@
     <!-- activity login -->
     <string name="action_about">Sobre</string>
     <string name="app_about">Aplicativo criado para ajudar na disciplina de Segurança em serviços e dispositivos móveis do curso de pós graduação Cibersegurança e Perícia Forense Computacional da UNIS MG</string>
-    <string name="title_activity_login">Sign in</string>
+    <string name="title_activity_login">Aplicativo Vulnerável</string>
 
     <!-- Strings related to login -->
     <string name="prompt_username">Nome de usuário</string>
     <string name="prompt_password">Senha</string>
     <string name="action_sign_in">Entrar no sistema</string>
     <string name="action_sign_in_short">Log in</string>
-    <string name="error_invalid_username">Nome de usuário inválido</string>
+    <string name="error_invalid_username">Nome de usuário e senha inválido</string>
     <string name="error_invalid_password">Senha muito curta</string>
     <string name="error_incorrect_password">Senha não reconhecida</string>
     <string name="error_field_required">Campo necessário</string>

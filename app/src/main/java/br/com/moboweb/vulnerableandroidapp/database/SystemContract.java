@@ -33,7 +33,7 @@ public final class SystemContract {
                     UserEntry.COLUMN_NAME_USERNAME + " TEXT," +
                     UserEntry.COLUMN_NAME_EMAIL + " TEXT," +
                     UserEntry.COLUMN_NAME_NAME + " TEXT," +
-                    UserEntry.COLUMN_NAME_PASSWORD + " TEXT)";
+                    UserEntry.COLUMN_NAME_PASSWORD + " TEXT);";
 
     public static final String SQL_DELETE_USER_ENTRIES =
             "DROP TABLE IF EXISTS " + UserEntry.TABLE_NAME;
@@ -42,7 +42,7 @@ public final class SystemContract {
             "CREATE TABLE " + ClockEntry.TABLE_NAME + " (" +
                     ClockEntry._ID + " INTEGER PRIMARY KEY," +
                     ClockEntry.COLUMN_NAME_USER_ID + " TEXT," +
-                    ClockEntry.COLUMN_NAME_CLOCKIN + " DATETIME)";
+                    ClockEntry.COLUMN_NAME_CLOCKIN + " DATETIME);";
 
     public static final String SQL_DELETE_CLOCK_ENTRIES =
             "DROP TABLE IF EXISTS " + ClockEntry.TABLE_NAME;
